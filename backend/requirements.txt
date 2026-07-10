@@ -1,0 +1,27 @@
+# Backend API Layer Requirements
+# Install in the same x64 venv as the main cricsense backend
+
+# FastAPI + ASGI server
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# WebSocket support
+websockets==12.0
+python-multipart==0.0.6
+
+# Database (Neo4j Graph Database)
+neo4j
+
+# File handling
+aiofiles==23.2.1
+
+# Additional utilities
+python-dateutil==2.8.2
+
+# Already installed in main cricsense venv (no reinstall needed):
+# - numpy
+# - opencv-python
+# - requests
+# - pyserial

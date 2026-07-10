@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    background-color: #F9F6EF;
+    color: #241E16;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  * { @apply box-border; }
+
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: #F3EDE0; }
+  ::-webkit-scrollbar-thumb { background: #C8C0B0; border-radius: 99px; }
+}
+
+@layer utilities {
+  @keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-slide {
+    animation: fadeSlideIn 0.4s ease forwards;
+  }
+
+  @keyframes speakPulse {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.04); }
+  }
+  .animate-speak {
+    animation: speakPulse 0.6s ease-in-out 3;
+  }
+}
+
+@layer components {
+  /* Card — the base surface */
+  .card {
+    @apply bg-white rounded-2xl border border-ink-100 shadow-card;
+  }
+
+  /* Geometric accent ring */
+  .geo-ring {
+    @apply absolute rounded-full border-2 border-cream-300 pointer-events-none;
+  }
+
+  /* Pill badge */
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium;
+  }
+
+  /* Section label */
+  .label {
+    @apply text-xs font-semibold uppercase tracking-widest text-ink-300;
+  }
+
+  /* Big metric number */
+  .metric-value {
+    @apply text-4xl font-black tracking-tight text-ink-600;
+  }
+
+  /* Button primary */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 bg-ink-600 hover:bg-ink-500
+           text-cream-50 text-sm font-semibold rounded-xl
+           transition-all duration-150 shadow-card hover:shadow-float;
+  }
+
+  /* Button ghost */
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 text-ink-400 hover:text-ink-600
+           hover:bg-cream-100 text-sm font-medium rounded-xl transition-all duration-150;
+  }
+
+  /* Status dot */
+  .dot-on  { @apply w-1.5 h-1.5 rounded-full bg-pitch-400; }
+  .dot-off { @apply w-1.5 h-1.5 rounded-full bg-ink-200; }
+}

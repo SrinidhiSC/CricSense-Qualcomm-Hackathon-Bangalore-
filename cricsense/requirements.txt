@@ -1,0 +1,39 @@
+# requirements.txt — install in x64 venv (Toolbox A)
+# py -3.10-64 -m venv C:\venvs\env-x64
+# C:\venvs\env-x64\Scripts\activate
+# pip install -r requirements.txt
+
+# Core CV & pose
+opencv-python
+mediapipe
+numpy
+
+# Qualcomm AI Hub (x64 only — ARM64 fails)
+qai-hub
+
+# Qualcomm NPU runtime (Qualcomm official recommended ML runtime for Snapdragon X Elite)
+# Used by Llama.cpp and ONNX models to access the Hexagon NPU (45 TOPS)
+onnxruntime-qnn
+
+# Arduino serial (only needed if BAT_MODE = "serial" / USB fallback)
+# pyserial is also used by bat_wifi_sender.py on the Arduino QRB2210 side
+pyserial
+
+# LLM client (AnythingLLM / GenieX / LM Studio — all OpenAI-compat)
+openai
+
+# WebSocket server (laptop) + client (phone)
+websockets
+
+# Audio: recording + playback
+sounddevice
+soundfile
+
+# HTTP calls (Sarvam cloud, Cirrascale)
+requests
+
+# Sarvam official Python SDK
+sarvamai
+
+# English TTS fallback
+pyttsx3
